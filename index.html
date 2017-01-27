@@ -26,7 +26,17 @@
   <script type="text/javascript">
       const form = document.querySelector('#registrar');
       const input = form.querySelector('input');
+      const mainDiv = document.querySelector('.main');
       const ul = document.querySelector('#invitedList');
+      const div = document.createElement('div');
+      const filterLabel = document.createElement('label');
+      const filterCheckbox = document.createElement('input');
+
+      filterLabel.textContent = 'Hide those who havent respond';
+      filterCheckbox.type = 'checkbox';
+      div.appendChild(filterLabel);
+      div.appendChild(filterCheckbox);
+      mainDiv.insertBefore(div, ul)
 
       function submitFunction (e) {
         e.preventDefault();
@@ -92,9 +102,24 @@
       }
     };
 
+    function filterWhoRSVPd () {
+      const lists = document.querySelectorAll('ul li');
+      lists.forEach((li) => {
+        const className = li.className;
+        if (className === '') {
+          if (li.style.display === 'none') {
+            li.style.display = 'block';
+          } else {
+            li.style.display = 'none';
+          }
+        }
+      });
+    }
+
       form.addEventListener('submit', submitFunction);
       ul.addEventListener('change', checkboxChange);
       ul.addEventListener('click', guestEdit);
+      filterCheckbox.addEventListener('change', filterWhoRSVPd);
   </script>
 </body>
 </html>
