@@ -82,6 +82,7 @@
         return li;
     }
 
+<<<<<<< HEAD
     function checkboxChange(e) {
         const checked = e.target.checked;
         const li = e.target.parentNode.parentNode;
@@ -158,6 +159,53 @@
             }
         });
     }
+=======
+  function guestEdit(e) {
+      const btn = e.target;
+      const li = e.target.parentNode;
+      const ul = li.parentNode;
+      const text = li.firstChild.textContent;
+      const checkbox = li.querySelector('label');
+      if (btn.tagName === 'BUTTON') {
+          if (btn.textContent === 'Remove') {
+              ul.removeChild(li);
+          } else if (btn.textContent === 'Edit') {
+              checkbox.style.display = 'none';
+              li.firstChild.innerHTML = `<input type="text" placeholder= ${text} > </input>`;
+              li.firstChild.firstChild.focus();
+              btn.textContent = 'Save';
+          } else if (btn.textContent === 'Save') {
+              checkbox.style.display = 'block';
+              const input = li.querySelector('input');
+              if (input.value === '') {
+                  li.firstChild.innerHTML = input.placeholder;
+              } else {
+                  li.firstChild.innerHTML = input.value;
+              }
+              btn.textContent = 'Edit';
+          }
+      }
+  };
+
+  function guestEditSaveOnEnter(e) {
+      const key = e.keyCode;
+      const list = document.querySelectorAll('li');
+      list.forEach(function(li) {
+          const button = li.querySelector('button');
+          const checkbox = li.querySelector('label');
+          const saveInput = li.querySelector('input');
+          if ((key === 13) && (button.textContent === 'Save')) {
+              checkbox.style.display = 'block';
+              if (saveInput.value === '') {
+                  li.firstChild.innerHTML = saveInput.placeholder;
+              } else {
+                  li.firstChild.innerHTML = saveInput.value;
+              }
+              button.textContent = 'Edit';
+          }
+      });
+  }
+>>>>>>> 19200516e9357e09847a79b61e3f87c98ac4e3ac
 
     form.addEventListener('submit', submitFunction);
     ul.addEventListener('change', checkboxChange);
