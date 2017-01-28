@@ -99,6 +99,7 @@
             ul.removeChild(li);
         } else if (btn.textContent === 'Edit') {
             li.firstChild.innerHTML = `<input type="text" placeholder= ${text} > </input>` ;
+            li.firstChild.firstChild.focus();
             btn.textContent = 'Save';
         } else if (btn.textContent === 'Save') {
             const input = li.querySelector('input');
@@ -111,6 +112,11 @@
         }
       }
     };
+
+
+
+
+
 
     function filterWhoRSVPd () {
       const lists = document.querySelectorAll('ul li');
@@ -129,6 +135,7 @@
       form.addEventListener('submit', submitFunction);
       ul.addEventListener('change', checkboxChange);
       ul.addEventListener('click', guestEdit);
+
       filterCheckbox.addEventListener('change', filterWhoRSVPd);
   </script>
 </body>
