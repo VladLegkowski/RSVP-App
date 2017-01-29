@@ -138,7 +138,10 @@
                 checkbox.style.display = 'block';
                 if (saveInput.value === '') {
                     li.firstChild.innerHTML = saveInput.placeholder;
-                } else {
+                } else if (saveInput.value.length < 2) {
+                  checkbox.style.display = 'none';
+                  return false;
+                }else {
                     li.firstChild.innerHTML = saveInput.value;
                 }
                 button.textContent = 'Edit';
