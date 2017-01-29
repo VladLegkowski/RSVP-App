@@ -1,5 +1,5 @@
 ## RSVP App
-This is an RSVP app. I borrowed the CSS from T3H but did JS by  myself.
+This is an RSVP app. I borrowed the CSS from T3H but did JS by  myself. JS code at the bottom of HTML file.
 
 ## Filter by Class name in pure JS.
 
