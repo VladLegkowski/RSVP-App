@@ -41,6 +41,7 @@
     function submitFunction(e) {
         e.preventDefault();
         if (input.value.length <= 2) {
+            input.style.transition = '0.2s'
             input.style.borderRadius = '2px';
             input.style.backgroundColor = '#c0392b';
             input.style.opacity = '0.7';
