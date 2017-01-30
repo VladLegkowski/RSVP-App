@@ -143,7 +143,7 @@ function guestEditSaveOnEnter(e) {
     const input = list.querySelector('input');
     if ((key === 13) && (button.textContent === 'Save')) {
       if (input.value === '') {
-        list.firstChild.innerHTML = guestsInput.placeholder;
+        list.firstChild.innerHTML = input.placeholder;
       } else if (input.value.length < 3) {
         checkbox.style.display = 'none';
         return false;
