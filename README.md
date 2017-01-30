@@ -1,7 +1,7 @@
 ## RSVP App
 This is an RSVP app. I borrowed the CSS from T3H but did JS by  myself. JS code at the bottom of HTML file.
 
-You can preview this site here: https://goo.gl/WjIjuC
+You can preview this <a href="https://goo.gl/WjIjuC">site here</a>.
 
 ## Filter by Class name in pure JS.
 
