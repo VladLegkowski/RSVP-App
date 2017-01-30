@@ -1,6 +1,8 @@
 ## RSVP App
 This is an RSVP app. I borrowed the CSS from T3H but did JS by  myself. JS code at the bottom of HTML file.
 
+You can preview the site here: https://goo.gl/WjIjuC
+
 ## Filter by Class name in pure JS.
 
 Clean and neat solution for hiding / displaying elements on the page with specific class.
